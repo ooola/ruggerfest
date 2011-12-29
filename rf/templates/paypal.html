@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block css %}
+{% endblock %}
+
+{% block nav-register %}
+    <li class="active"><a href="/register/">Register</a></li>
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="content">
+        <div class="page-header">
+            <h1>Ruggerfest 2012 Registration Payment</h1>
+        </div>
+        <div class="row">
+            <div class="span16">
+                <div class="alert-message block-message success">
+                    <a class="close" href="#">&times;</a>
+                    <p><strong>We've got your information!</strong></p>
+                    <br/>
+                    <p>To finish your registration click on the "Pay Now" button and you'll
+                    be redirect to PayPal to complete the registration payment.
+                    PayPal accepts all major credit cards for payment and does
+                    not require a PayPal account.</p>
+                </div>
+
+
+<!--
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="EUC7XZQDYD8GE">
+<table>
+<tr><td><input type="hidden" name="on0" value="Division">Division</td></tr><tr><td><select name="os0">
+	<option value="Premier">Premier $450.00 USD</option>
+	<option value="Club">Club $375.00 USD</option>
+	<option value="Old Boys">Old Boys $350.00 USD</option>
+	<option value="Women">Women $300.00 USD</option>
+</select> </td></tr>
+<tr><td><input type="hidden" name="on1" value="Club Name">Club Name</td></tr><tr><td><input type="text" name="os1" maxlength="200"></td></tr>
+</table>
+<input type="hidden" name="currency_code" value="USD">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+-->
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+    <input type="hidden" name="cmd" value="_s-xclick">
+    <input type="hidden" name="hosted_button_id" value="6KSZSZ5AM874A">
+    <div class="input">
+        <input type="hidden" name="on0" value="Division">
+        <select name="os0">
+            {{div|safe}}
+            <!--
+            <option value="Premier">Premier $450.00 USD</option>
+            <option value="Club">Club $375.00 USD</option>
+            <option value="Old Boys">Old Boys $350.00 USD</option>
+            <option value="Women">Women $300.00 USD</option>
+            -->
+        </select>
+        <input type="submit" class="btn primary" value="Pay Now">
+    </div>
+        <!--
+        <tr><td>
+                <input type="label">
+                <input type="hidden" name="on1" value="Club Name">{{teamname}}</td></tr><tr><td><input type="hidden" name="os1"
+                maxlength="200" value="shittt" placeholder="222shit">
+
+<tr><td>        <input type="hidden" name="on1" value="Club Name">Club Name</td></tr><tr><td><input type="text" name="os1" maxlength="200"></td></tr>
+                -->
+        <!--
+        </td></tr>
+                -->
+            {{name|safe}}
+
+    <input type="hidden" name="currency_code" value="USD">
+<!-- <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"> -->
+    <input type="hidden" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<!-- <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"> -->
+
+</form>
+
+            </div> <!-- span16 -->
+        </div> <!-- row -->
+    </div> <!-- content -->
+    <footer>
+    <p>&copy; Fort Lauderdale Rugby Football Club 2011-2012</p>
+    </footer>
+</div> <!-- /container -->
+
+{% endblock %}

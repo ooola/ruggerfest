@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Fort Lauderdale Ruggerfest</title>
+    <meta name="description" content="Fort Lauderdale Ruggerfest 2012">
+    <meta name="author" content="Ola Nordstrom">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/staticfiles/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+      /* Override some defaults */
+      html, body {
+        background-color: #fff;
+      }
+      .container > footer p {
+        text-align: center; /* center align it with the container */
+      }
+
+      h3 {
+          margin-left: 5px;
+          color: #04456b;
+      }
+      li {
+          color: #04456b;
+      }
+
+      .blue {
+          background-color: #d2e4f2;
+          border-color: #d2e4f2;
+          border-style:solid;
+          border-width:5px;
+          -webkit-border-radius: 10px;
+             -moz-border-radius: 10px;
+                  border-radius: 10px;
+      }
+
+      .blue2 {
+          background-color: #d2e4f2;
+          border-color: #d2e4f2;
+          border-style:solid;
+          border-width:15px;
+          -webkit-border-radius: 20px;
+             -moz-border-radius: 20px;
+                  border-radius: 20px;
+      }
+
+      .brown {
+          background-color: #d0d291;
+          border-color: #d0d291;
+          border-style:solid;
+          border-width:15px;
+          -webkit-border-radius: 20px;
+             -moz-border-radius: 20px;
+                  border-radius: 20px;
+      }
+
+      .white {
+          background-color: #fff;
+          border-color: #fff;
+          border-style:solid;
+          border-width:5px;
+          -webkit-border-radius: 10px;
+             -moz-border-radius: 10px;
+                  border-radius: 10px;
+      }
+
+      .boxtext {
+          margin-left: 5px;
+          margin-right: 5px;
+          margin-top: 5px;
+          margin-bottom: 5px;
+          color: #04456b;
+      }
+
+      .boxcontent {
+          background-color: #fff;
+          margin: 5px 5px 5px 5px;
+          padding: 5px 5px 5px 5px;
+      }
+
+      .reglink {
+          font-size: 8px;
+          margin: 0 -20px;
+      }
+
+      /* The white background content wrapper */
+      .container > .content {
+        background-color: #fff;
+        padding: 20px;
+        margin: -20px -20px; /* negative indent the amount of the padding to maintain the grid system */
+      }
+
+      {% block css %}
+      {% endblock %}
+
+    </style>
+  </head>
+
+  <body>
+
+    <div class="container">
+        <div class="row">
+            <div class="span16">
+                <img src="/staticfiles/images/ruggerfest_top_header.png" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="span16">
+                <ul class="tabs">
+                    {% block nav-home %}
+                        <li><a href="/">Home</a></li>
+                    {% endblock %}
+                    {% block nav-register %}
+                        <li><a href="/register/">Register</a></li>
+                    {% endblock %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+   {% block body %}
+   {% endblock %}
+
+  </body>
+</html>

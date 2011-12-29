@@ -1,0 +1,5 @@
+*.pyc
+*.db
+notes.txt
+.DS_Store
+*.swp
