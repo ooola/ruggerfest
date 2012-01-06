@@ -5,7 +5,7 @@ LOCAL_DIR="rf/"
 REMOTE_DIR="/var/www/ruggerfest/htdocs/rf/"
 #REMOTE_DIR="tmp/rf/"
 RSYNC="rsync"
-EXCLUDES="*.pyc *.db .*"
+EXCLUDES="*.pyc *.db *_*.db .*"
 SERVER="scrapeny.com"
 TMPFILE=sync-excludes.$$
 
