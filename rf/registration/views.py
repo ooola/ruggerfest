@@ -11,6 +11,9 @@ import datetime
 def home(request):
     return render_to_response('home.html')
 
+def brackets(request):
+    return render_to_response('brackets.html')
+
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
