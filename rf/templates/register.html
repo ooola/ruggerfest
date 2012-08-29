@@ -12,14 +12,116 @@
 <div class="container">
     <div class="content">
         <div class="page-header">
-            <h1>Ruggerfest 2012 registration is now closed.</h1>
-            <h2>Please come back later this year and register for 2013.</h2>
+            <h1>Ruggerfest 2013 Registration</h1>
         </div>
         <div class="row">
+            <div class="span16">
+                {% if form.errors %}
+                <div class="alert-message error">
+                    <a class="close" href="#">&times;</a>
+                    <p><strong>Oh snap!</strong> There are some errors below</p>
+                    <!-- for debugging
+                    <p>{{form.errors}}</p>
+                    -->
+                </div>
+                {% endif %}
+                <form action="/register/" method="post">
+                    {% csrf_token %}
+
+                    <fieldset>
+                        <legend>Team Information</legend>
+
+                        <div class="clearfix {% if form.teamname.errors %} error {% endif %}">
+                            <label for="xlInput {% if form.teamname.errors %} errorInput {% endif %}">{{form.teamname.label}}</label>
+                            <div class="input">
+                                {% if form.teamname.errors %}
+                                    <div class="error">
+                                        {{ form.teamname }}
+                                    </div>
+                                {% else %}
+                                    {{ form.teamname }}
+                                {% endif %}
+
+                                {% if form.teamname.errors %}
+                                    <span class="help-inline">{{ form.teamname.help_text }}</span>
+                                {% endif %}
+                            </div>
+                        </div><!-- /clearfix -->
+
+                        <div class="clearfix">
+                            <label for="normalSelect">{{form.division.label}}</label>
+                            <div class="input">
+                                {{ form.division }}
+                            </div>
+                        </div><!-- /clearfix -->
+
+                        <div class="clearfix {% if form.captain.errors %} error {% endif %}">
+                            <label for="xlInput {% if form.captain.errors %} errorInput {% endif %}">{{form.captain.label}}</label>
+                            <div class="input">
+                                {% if form.captain.errors %}
+                                    <div class="error">
+                                        {{ form.captain }}
+                                    </div>
+                                {% else %}
+                                    {{ form.captain }}
+                                {% endif %}
+
+                                {% if form.captain.errors %}
+                                    <span class="help-inline">{{ form.captain.help_text }}</span>
+                                {% endif %}
+                            </div>
+                        </div><!-- /clearfix -->
+
+                        <div class="clearfix {% if form.email.errors %} error {% endif %}">
+                            <label for="xlInput {% if form.email.errors %} errorInput {% endif %}">
+                                {{form.email.label}}
+                            </label>
+                            <div class="input">
+                                {% if form.email.errors %}
+                                    <div class="error">
+                                        {{ form.email }}
+                                    </div>
+                                {% else %}
+                                    {{ form.email }}
+                                {% endif %}
+
+                                {% if form.email.errors %}
+                                    <span class="help-inline">{{ form.email.help_text }}</span>
+                                {% endif %}
+                            </div>
+                        </div><!-- /clearfix -->
+
+                        <div class="clearfix {% if form.phone_number.errors %} error {% endif %}">
+                            <label for="xlInput {% if form.phone_number.errors %} errorInput {% endif %}">
+                                {{form.phone_number.label}}
+                            </label>
+                            <div class="input">
+                                {% if form.phone_number.errors %}
+                                    <div class="error">
+                                        {{ form.phone_number }}
+                                    </div>
+                                {% else %}
+                                    {{ form.phone_number }}
+                                {% endif %}
+
+                                {% if form.phone_number.errors %}
+                                    <span class="help-inline">{{ form.phone_number.help_text }}</span>
+                                {% endif %}
+                            </div>
+                        </div><!-- /clearfix -->
+
+                        <div class="actions">
+                            <input type="submit" class="btn primary" value="Submit">&nbsp;<button type="reset" class="btn"
+                                >Clear</button>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div> <!-- span16 -->
         </div> <!-- row -->
     </div> <!-- content -->
     <footer>
-    <p>&copy; Fort Lauderdale Rugby Football Club 2011-2012</p>
+    <p>&copy; Fort Lauderdale Rugby Football Club</p>
     </footer>
 </div> <!-- /container -->
 
