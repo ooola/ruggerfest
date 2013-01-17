@@ -15,7 +15,7 @@ class Team(models.Model):
     email = models.EmailField('Contact Email', blank=False, max_length=256, help_text='Please enter a valid email')
     phone_number = models.CharField('Phone Number', blank=False, max_length=20, null=True,
                                           help_text='Please enter a valid phone number')
-    date = models.DateTimeField('Date played', auto_now_add=True)
+    date = models.DateTimeField('Registration Date', auto_now_add=True)
     paid = models.BooleanField(blank=True, default=False)
     def __unicode__(self):
         return self.teamname
