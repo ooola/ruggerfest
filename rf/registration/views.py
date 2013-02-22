@@ -14,6 +14,9 @@ def home(request):
 def brackets(request):
     return render_to_response('brackets.html')
 
+def schedule(request):
+    return render_to_response('schedule.html')
+
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
