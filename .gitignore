@@ -1,5 +1,6 @@
 *.pyc
 *.db
 notes.txt
+settings_secret.py
 .DS_Store
 *.swp

@@ -13,3 +13,5 @@ if HOSTNAME in DEBUGGING_HOSTS:
     from settings_debug import *
 else:
     from settings_production import *
+
+from settings_secret import *
