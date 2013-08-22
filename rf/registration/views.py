@@ -26,13 +26,13 @@ def register(request):
             instance = form.save(commit=False)
             instance.save()
             if c['division'] == u'P':
-                div = '<option value="Premier">Premier $450.00 USD</option>'
+                div = '<option value="Premier">Premier $350.00 USD</option>'
             elif c['division'] == u'M':
-                div = '<option value="Club">Club $375.00 USD</option>'
+                div = '<option value="Club">Club $275.00 USD</option>'
             elif c['division'] == u'O':
-                div = '<option value="Old Boys">Old Boys $350.00 USD</option>'
+                div = '<option value="Old Boys">Old Boys $250.00 USD</option>'
             elif c['division'] == u'W':
-                div = '<option value="Women">Women $300.00 USD</option>'
+                div = '<option value="Women">Women $200.00 USD</option>'
             else:
                 pass; # should not occur since division has been validated
             name = '<input type="hidden" name="on1" value="Club Name"></td></tr><tr><td><input type="hidden" name="os1" maxlength="200" value="' + c['teamname'] + '">'

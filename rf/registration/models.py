@@ -1,10 +1,10 @@
 from django.db import models
 
 DIVISION_CHOICES = (
-        (u'P', u'Premier $450'),
-        (u'M', u'Mens/Collegiate $375'),
-        (u'O', u'Oldboys $350'),
-        (u'W', u'Women/Collegiate $300'),
+        (u'P', u'Premier $350'),
+        (u'M', u'Mens/Collegiate $275'),
+        (u'O', u'Oldboys $250'),
+        (u'W', u'Women/Collegiate $200'),
     )
 
 class Team(models.Model):
